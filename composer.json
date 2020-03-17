@@ -1,5 +1,5 @@
 {
-    "name": "iiifx-production/yii2-secure-remember-me",
+    "name": "borlano/yii2-secure-remember-me",
     "type": "extension",
     "description": "Yii2 Secure RememberMe",
     "keywords": [
@@ -9,12 +9,12 @@
         "secure",
         "login"
     ],
-    "homepage": "https://github.com/iiifx-production/yii2-secure-remember-me",
+    "homepage": "https://github.com/borlano/yii2-secure-remember-me",
     "license": "MIT License",
     "authors": [
         {
-            "name": "Vitaliy IIIFX Khomenko",
-            "email": "iiifx@yandex.com"
+            "name": "Alexey Arabadzhi",
+            "email": "borlano7@gmail.com"
         }
     ],
     "require": {
