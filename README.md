@@ -7,7 +7,7 @@
 Используя Composer:
 
 ``` bash
-$ composer require "iiifx-production/yii2-secure-remember-me"
+$ composer require "borlano/yii2-secure-remember-me"
 ```
 
 ## Миграции
@@ -15,7 +15,7 @@ $ composer require "iiifx-production/yii2-secure-remember-me"
 Выполнить в консоли:
 
 ``` bash
-$ php yii migrate --migrationPath=@vendor/iiifx-production/yii2-secure-remember-me/source/migrations
+$ php yii migrate --migrationPath=@vendor/borlano/yii2-secure-remember-me/source/migrations
 ```
 
 ## Настройка
@@ -35,6 +35,7 @@ $ php yii migrate --migrationPath=@vendor/iiifx-production/yii2-secure-remember-
             'class' => 'iiifx\yii2\SecureRememberMe\components\Manager',
             # Конфигурация компонента
             'cookieKey' => 'remember-me', # Имя Cookie параметра
+            'domain' => 'example.com', # Указываем домен, к которому привязывается Cookie
             'lifetime' => 2592000, # Время жизни токена, в секундах
             'userClass' => 'common\models\User', # Класс пользователя, который используется в приложении
         ],
@@ -99,10 +100,6 @@ $ php yii migrate --migrationPath=@vendor/iiifx-production/yii2-secure-remember-
 Проверка, аутентификация по токену и его регенерация происходит автоматически.
 
 Все. Компонент готов к работе.
-
-## Тесты
-
-@TODO
 
 ## Лицензия
 

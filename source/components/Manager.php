@@ -26,6 +26,13 @@ class Manager extends BaseObject implements BootstrapInterface
     public $cookieKey = 'remember-me';
 
     /**
+     * Домен, к которому будет привязываться Cookie
+     *
+     * @var string
+     */
+    public $domain = "";
+
+    /**
      * Вреья жизни данных в куки и БД
      *
      * @var int
@@ -210,11 +217,15 @@ class Manager extends BaseObject implements BootstrapInterface
      */
     protected function setCookieData($selector, $token)
     {
-        Yii::$app->getResponse()->getCookies()->add(new Cookie([
+        $config = [
             'name' => $this->cookieKey,
             'value' => "{$selector}:{$token}",
             'expire' => time() + $this->lifetime,
-        ]));
+        ];
+        if(!empty($this->domain)){
+            $config["domain"] = $this->domain;
+        }
+        Yii::$app->getResponse()->getCookies()->add(new Cookie($config));
     }
 
     /**
